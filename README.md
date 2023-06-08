@@ -1,26 +1,24 @@
 <!--
-  <<< Author notes: Step 5 >>>
-  Start this step by acknowledging the previous step.
-  Define terms and link to docs.github.com.
+  <<< Author notes: Finish >>>
+  Review what we learned, ask for feedback, provide next steps.
 -->
 
-## Step 5: Run your image
+## Finish
 
-_Nicely done grabbing your Docker image! :relaxed:_
+_Congratulations friend, you've completed this course!_
 
-Let's trying running it.
+<img src=https://octodex.github.com/images/collabocats.jpg alt=celebrate width=300 align=right>
 
-### :keyboard: Activity: Run your image
+Here's a recap of all the tasks you've accomplished in your repository:
 
-1. Find your image information by typing `docker image ls`.
-   ![screenshot of output from Docker image ls command: lists docker images, REPOSITORY TAG and docker URL](https://i.imgur.com/UAwRXiq.png)<!-- This screenshot should be changed. -->
-1. Use the following command to run a container from your image:
-   ```bash
-   docker run -dp 8080:80 --rm <YOUR_IMAGE_NAME:TAG>
-   ```
-1. Replace `YOUR_IMAGE_NAME` with your image name under the `REPOSITORY` column.
-1. Replace `TAG` with the image tag under the `TAG` column.
-1. Press **Enter**.
-1. If everything went well, you will see hash value as output on your screen.
-1. Optionally, you can open [localhost:8080](http://localhost:8080) to see the page you just created.
-1. _We can't automatically verify this step for you, so please continue on to the next step below!_
+- You wrote a workflow that sends a code through a continuous delivery pipeline.
+- You built a fully deployable artifact.
+- You did so using GitHub Actions and GitHub Packages!
+
+### What's next?
+
+- Publish your own packages from your projects.
+- We'd love to hear what you thought of this course [in our discussion board](https://github.com/skills/.github/discussions).
+- [Take another GitHub Skills course](https://github.com/skills).
+- [Read the GitHub Getting Started docs](https://docs.github.com/en/get-started).
+- To find projects to contribute to, check out [GitHub Explore](https://github.com/explore).
