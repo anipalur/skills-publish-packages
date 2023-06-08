@@ -1,47 +1,47 @@
-<header>
-
 <!--
-  <<< Author notes: Course header >>>
-  Include a 1280×640 image, course title in sentence case, and a concise description in emphasis.
-  In your repository settings: enable template repository, add your 1280×640 social image, auto delete head branches.
-  Add your open source license, GitHub uses the MIT license.
--->
-
-# Publish to GitHub Packages
-
-_Use GitHub Actions to publish your project to a Docker image._
-
-</header>
-
-<!--
-  <<< Author notes: Step 3 >>>
+  <<< Author notes: Step 4 >>>
   Start this step by acknowledging the previous step.
   Define terms and link to docs.github.com.
 -->
 
-## Step 3: Merge your changes
+## Step 4: Pull your image
 
-_Let's get publishing! :heart:_
+_Now things are running! :sparkles:_
 
-You can now [merge](https://docs.github.com/en/get-started/quickstart/github-glossary#merge) your changes!
+Whoa, now things are running! This may take a few minutes. This might take a tiny amount of time, so grab your popcorn :popcorn: and wait for the build to finish before moving on.
 
-### :keyboard: Activity: Merge your changes
+To pull the Docker image, we need to log into Docker first.
 
-1. Merge your changes from `cd` into `main`. If you created the pull request in step 1, just open that PR and click on **Merge pull request**. If you did not create the pull request earlier, you can do it now by following the instructions in step 1.
-1. (optional) Delete the branch `cd`.
-1. Wait about 20 seconds then refresh this page (the one you're following instructions from). [GitHub Actions](https://docs.github.com/en/actions) will automatically update to the next step.
+Before we can use this Docker image, you will need to generate a [personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) that contains the following permissions:
 
-<footer>
+- repo (all)
+- write:packages
+- read:packages
 
-<!--
-  <<< Author notes: Footer >>>
-  Add a link to get support, GitHub status page, code of conduct, license link.
--->
+![screenshot personal access token creation page with boxes for repo (all), write:packages, and read:packages checked](https://user-images.githubusercontent.com/3250463/219254714-82bb1da5-33b1-491b-97c0-b25f51494f6a.png)
 
----
+We will use this token to log in to Docker, and authenticate with the package.
 
-Get help: [Post in our discussion board](https://github.com/skills/.github/discussions) &bull; [Review the GitHub status page](https://www.githubstatus.com/)
+1. Open your terminal (Bash or Git Bash recommended).
+1. Use the following command to log in:
+   ```bash
+   docker login ghcr.io -u USERNAME
+   ```
+1. Replace `USERNAME` with your GitHub username.
+1. Enter your new Personal Access Token as the password.
+1. Press **Enter**.
 
-&copy; 2023 GitHub &bull; [Code of Conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md) &bull; [MIT License](https://gh.io/mit)
+If everything went well, :crossed_fingers: you should see `Login Succeeded` in your terminal.
 
-</footer>
+### :keyboard: Activity: Pull your image
+
+1. Copy and paste the `pull` command from the package instructions into your terminal. It should look something like this:
+   - `docker pull ghcr.io/YOURNAME/publish-packages/game:TAG`
+     ![screenshot of the pull command on the GitHub package page](https://user-images.githubusercontent.com/3250463/219254981-9ff949fa-4d01-46e3-9e3d-b8ce3710c2a9.png)
+   - _Tip: To reach this page, click the **Code** tab at the top of your repository. Then, find the navigation bar below the repository description, and click the **Packages** heading link_
+1. Replace `YOURNAME` with your GitHub username.
+1. Replace `TAG` with the image tag.
+1. Press **Enter**.
+1. You should see output indicating that the pull was successful, like `Status: Downloaded newer image for ghcr.io/YOURNAME/publish-packages/game:TAG`.
+   ![screenshot of successful Docker image output](https://user-images.githubusercontent.com/3250463/219255178-3c943a6f-6c15-4f59-9002-228249b1c469.png)
+1. _We can't automatically verify this step for you, so please continue on to the next step below!_
